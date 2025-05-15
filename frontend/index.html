@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-zinc-900 text-white">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Divyastra Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+    <!-- Favicon (optional) -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background: radial-gradient(circle at 30% 30%, #1e1e2f, #12121c);
+      }
+
+      /* Smooth scroll + fade */
+      .chat-window {
+        scroll-behavior: smooth;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #4b5563;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body class="h-full">
+    <div class="flex flex-col h-screen max-w-3xl mx-auto px-4 py-6">
+      <header class="text-center text-3xl font-semibold text-white mb-4">
+        🤖 Divyastra Chatbot
+      </header>
+
+      <!-- Chat Window -->
+      <main id="chat-window" class="flex-1 overflow-y-auto space-y-4 p-4 bg-zinc-800 rounded-xl shadow-inner chat-window">
+        <!-- Chat messages injected via JS/React -->
+        <div class="text-center text-zinc-400">Ask me anything...</div>
+      </main>
+
+      <!-- Input Section -->
+      <form id="chat-form" class="mt-4 flex items-center gap-2">
+        <input
+          id="user-input"
+          type="text"
+          placeholder="Type your message..."
+          class="flex-1 bg-zinc-700 text-white p-3 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+        <button
+          type="submit"
+          class="bg-indigo-600 hover:bg-indigo-700 transition px-5 py-3 rounded-xl text-white font-semibold"
+        >
+          Send
+        </button>
+      </form>
+    </div>
+
+    <!-- Optional: JS entry if not using React -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
